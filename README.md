@@ -64,9 +64,15 @@ In addition to moving the current branch, you can also get git reset to alter th
 
 ## Cherry Pick
 
+It's take a commit from somewhere else, and "play it back" wherever you are right now
 
+Situation before using `cherry-pick` command.
 
+![](./images/git-cherry-pick-reachability-example.png)
 
+If you were at node H in this graph, and you typed `git cherry-pick E` you'd wind up with a copy of commit E.
+
+![](./images/git-cherry-pick-reachability-example-2.png)
 
 
 ## References
