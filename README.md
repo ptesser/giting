@@ -64,7 +64,7 @@ In addition to moving the current branch, you can also get git reset to alter th
 
 ## Cherry Pick
 
-It's take a commit from somewhere else, and "play it back" wherever you are right now
+It's take a commit from somewhere else, and "play it back" wherever you are right now. It creates a new commit with a new ID.
 
 Situation before using `cherry-pick` command.
 
@@ -74,6 +74,24 @@ If you were at node H in this graph, and you typed `git cherry-pick E` you'd win
 
 ![](./images/git-cherry-pick-reachability-example-2.png)
 
+It will add **only the changes** applied with the E commit and not in those before.
+
+Example:
+
+Given these sequence:
+
+1. `git checkout -b develop`
+2. `touch new-file-1.md`
+3. `git add -A && git commit (ID 1233423)`
+4. `touch new-file-2.md`
+5. `git add -A && git commit (ID 5672839)`
+6. `git co master`
+7. `git cherry-pick 5672839`
+
+We'll find the only the `new-file-2.md` in the current branch.
+
+
+-----------------------
 
 ## References
 
