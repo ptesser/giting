@@ -26,6 +26,27 @@ You can set an alias in two way:
   dump = cat-file -p
 ```
 
+## Rewriting history
+
+### Amend
+
+This commit option (`git commit --amend`) is an easy way to fix up the most recent commit.
+
+It gives differnt kind of action like:
+
+- combine staged changes with the previous commit
+- edit previous commit message
+
+This option doesn't alter the most recent commit, it replaces it entirely.
+
+**Don't** amend public commits.
+
+### Rebase
+
+
+
+
+
 ## Reset, Checkout and Revert
 
 They all let you undo some kind of change in your repository, and the first two commands can be used to manipulate either commits or individual files.
@@ -53,12 +74,22 @@ In addition to moving the current branch, you can also get git reset to alter th
 
 ### Checkout
 
+It move `HEAD` to a different branch or to a different commit and update the working directory to match.
 
+Useful to inspect an old version of your project.
 
+`git checkout <branch-name>`
 
+or
 
+`git checkout <commit-reference>`
 
 ### Revert
+
+It undoes a commit by creating a **new commit**.
+
+This is a **safe way** to undo changes. It is very useful when you have already push the commit on a public branch.
+
 
 
 
@@ -90,6 +121,9 @@ Given these sequence:
 
 We'll find the only the `new-file-2.md` in the current branch.
 
+## Merging vs Rebasing
+
+
 
 -----------------------
 
@@ -98,4 +132,6 @@ We'll find the only the `new-file-2.md` in the current branch.
 - https://githowto.com/aliases
 - http://think-like-a-git.net/sections/rebase-from-the-ground-up/cherry-picking-explained.html
 - https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting
+- https://www.atlassian.com/git/tutorials/rewriting-history
+- https://www.atlassian.com/git/tutorials/merging-vs-rebasing
 
