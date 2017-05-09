@@ -1,6 +1,6 @@
 # Giting
 
-This repository is to try advanced functionality of Git.
+This repository has been created to try advanced functionality of Git.
 
 
 ## Alias
